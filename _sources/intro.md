@@ -1,4 +1,4 @@
-# SQLite3 for PHP
+# SQLite3 入門
 
 ```{tableofcontents}
 

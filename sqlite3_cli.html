@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQLite3 CLI の基本操作 &#8212; Introduction to SQLite3</title>
+    <title>SQLite CLI の基本操作 &#8212; Introduction to SQLite3</title>
   
   
   
@@ -61,7 +61,8 @@
     <link rel="canonical" href="https://rice8y.github.io/sqlite3/sqlite3_cli.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="SQLite3 for PHP" href="intro.html" />
+    <link rel="next" title="PHP による SQLite3 の基本操作" href="sqlite3_php.html" />
+    <link rel="prev" title="SQLite3 入門" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="unknown"/>
   </head>
@@ -173,12 +174,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    SQLite3 for PHP
+                    SQLite3 入門
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQLite3 CLI の基本操作</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQLite CLI の基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite3_php.html">PHP による SQLite3 の基本操作</a></li>
 </ul>
 
     </div>
@@ -364,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQLite3 CLI の基本操作</h1>
+    <h1>SQLite CLI の基本操作</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,6 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">テーブルの作成</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">データの挿入</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLI の終了</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">参考文献</a></li>
 </ul>
             </nav>
         </div>
@@ -391,8 +394,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sqlite3-cli">
-<h1>SQLite3 CLI の基本操作<a class="headerlink" href="#sqlite3-cli" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sqlite-cli">
+<h1>SQLite CLI の基本操作<a class="headerlink" href="#sqlite-cli" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>準備<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>まず, SQLite3 がインストールされているかを確認する. 以下のようにバージョン情報が表示されればOK.</p>
@@ -410,7 +413,7 @@ document.write(`
 </section>
 <section id="cli">
 <h2>CLI の起動<a class="headerlink" href="#cli" title="Link to this heading">#</a></h2>
-<p>まず, <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> で SQLite3 CLI を起動する. ここでは, CLI が起動しただけで, データベースには接続されていない点に注意.</p>
+<p>まず, <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> で SQLite CLI を起動する. ここでは, CLI が起動しただけで, データベースには接続されていない点に注意.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/public_html/pblone/sqltest$<span class="w"> </span>sqlite3
 SQLite<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.37.2<span class="w"> </span><span class="m">2022</span>-01-06<span class="w"> </span><span class="m">13</span>:25:41
 Enter<span class="w"> </span><span class="s2">&quot;.help&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>usage<span class="w"> </span>hints.
@@ -470,6 +473,13 @@ id<span class="p">|</span>username<span class="p">|</span>password
 </pre></div>
 </div>
 </section>
+<section id="id5">
+<h2>参考文献<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>SQLite, &quot;Command Line Shell For SQLite&quot;, <a class="reference external" href="https://www.sqlite.org/cli.html">https://www.sqlite.org/cli.html</a>, (2024-06-25 参照).</p></li>
+<li><p>Mototaka KANEMATSU, &quot;SQLite3 Command Line Shell dot-commands マニュアル(完全版)&quot;, 2020-04-19,  <a class="reference external" href="https://qiita.com/kanegoon/items/fc1e4bfea0984dbe4b90">https://qiita.com/kanegoon/items/fc1e4bfea0984dbe4b90</a>, (2024-06-25 参照).</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -508,8 +518,17 @@ id<span class="p">|</span>username<span class="p">|</span>password
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SQLite3 for PHP</p>
+        <p class="prev-next-title">SQLite3 入門</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="sqlite3_php.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PHP による SQLite3 の基本操作</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -533,6 +552,7 @@ id<span class="p">|</span>username<span class="p">|</span>password
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">テーブルの作成</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">データの挿入</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLI の終了</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">参考文献</a></li>
 </ul>
   </nav></div>
 

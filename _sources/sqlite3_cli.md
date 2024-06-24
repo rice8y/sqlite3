@@ -1,4 +1,4 @@
-# SQLite3 CLI の基本操作
+# SQLite CLI の基本操作
 
 ## 準備
 
@@ -20,7 +20,7 @@
 
 ## CLI の起動
 
-まず, `sqlite3` で SQLite3 CLI を起動する. ここでは, CLI が起動しただけで, データベースには接続されていない点に注意.
+まず, `sqlite3` で SQLite CLI を起動する. ここでは, CLI が起動しただけで, データベースには接続されていない点に注意.
 
 ```bash
 ~/public_html/pblone/sqltest$ sqlite3
@@ -94,3 +94,9 @@ CLI は, `.exit` または `.ex` で終了できる. `Ctrl+D` でも可.
 sqlite> .exit
 ~/public_html/pblone/sqltest$
 ```
+
+## 参考文献
+
+- SQLite, "Command Line Shell For SQLite", [https://www.sqlite.org/cli.html](https://www.sqlite.org/cli.html), (2024-06-25 参照).
+- Mototaka KANEMATSU, "SQLite3 Command Line Shell dot-commands マニュアル(完全版)", 2020-04-19,  [https://qiita.com/kanegoon/items/fc1e4bfea0984dbe4b90](https://qiita.com/kanegoon/items/fc1e4bfea0984dbe4b90), (2024-06-25 参照).
+  
