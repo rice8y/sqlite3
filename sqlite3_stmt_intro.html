@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQLite3Stmt クラスの概要 &#8212; Introduction to SQLite3</title>
+    <title>SQLite3Stmt クラス &#8212; Introduction to SQLite3</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="SQLite3Stmt::bindValue" href="sqlite3_bindvalue.html" />
-    <link rel="prev" title="SQLite3::enableExceptions" href="sqlite3_enableexception.html" />
+    <link rel="prev" title="SQLite3::close" href="sqlite3_close.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="unknown"/>
   </head>
@@ -174,20 +174,22 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    SQLite3 入門
+                    SQLite3 for PHP
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_cli.html">SQLite CLI の基本操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_php.html">PHP による SQLite3 の基本操作</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラスの概要</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_construct.html">SQLite3::__construct</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_exec.html">SQLite3::exec</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_enableexception.html">SQLite3::enableExceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_prepare.html">SQLite3::prepare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_close.html">SQLite3::close</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">SQLite3Stmt クラスの概要</a><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">SQLite3Stmt クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_bindvalue.html">SQLite3Stmt::bindValue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_excute.html">SQLite3Stmt::execute</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
@@ -375,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQLite3Stmt クラスの概要</h1>
+    <h1>SQLite3Stmt クラス</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,8 +392,8 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sqlite3stmt">
-<h1>SQLite3Stmt クラスの概要<a class="headerlink" href="#sqlite3stmt" title="Link to this heading">#</a></h1>
-<p>SQLite3Stmt クラスのメソッドの一部を示す.</p>
+<h1>SQLite3Stmt クラス<a class="headerlink" href="#sqlite3stmt" title="Link to this heading">#</a></h1>
+<p>SQLite3Stmt クラスのメソッドの一部を示す. 詳細は <a class="reference external" href="https://www.php.net/manual/ja/class.sqlite3stmt.php">https://www.php.net/manual/ja/class.sqlite3stmt.php</a> を参照.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_bindvalue.html">SQLite3Stmt::bindValue</a></li>
@@ -431,12 +433,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sqlite3_enableexception.html"
+       href="sqlite3_close.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SQLite3::enableExceptions</p>
+        <p class="prev-next-title">SQLite3::close</p>
       </div>
     </a>
     <a class="right-next"
