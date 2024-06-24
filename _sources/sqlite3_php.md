@@ -1,6 +1,6 @@
 # PHP による SQLite3 の基本操作
 
-SQLite3 は, CLI だけでなく他のプログラミング言語のライブラリやバインディングを利用して操作することができる. ここでは, [SQLite CLI の使い方](sqlite3_cli.md) の手順を PHP で行う.
+SQLite3 は, CLI だけでなく他のプログラミング言語のライブラリやバインディングを利用して操作することができる. ここでは, [SQLite CLI の基本操作](sqlite3_cli.md) の手順を PHP で行う.
 
 ## PHP による SQLite3 の操作例
 
@@ -97,7 +97,7 @@ sqlite> INSERT INTO usertable (username, password) VALUES ('testuser', 'testpass
 
 の部分に対応する.
 
-## 5. データベースへの接続終了
+### 5. データベースへの接続終了
 
 最後に, データベースへの接続を切断する.
 

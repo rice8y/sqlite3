@@ -381,9 +381,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. エラー処理</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. テーブルの作成</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4. データの挿入</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5. データベースへの接続終了</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5. データベースへの接続終了</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">補足</a></li>
 </ul>
 </li>
@@ -401,7 +399,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="php-sqlite3">
 <h1>PHP による SQLite3 の基本操作<a class="headerlink" href="#php-sqlite3" title="Link to this heading">#</a></h1>
-<p>SQLite3 は, CLI だけでなく他のプログラミング言語のライブラリやバインディングを利用して操作することができる. ここでは, <a class="reference internal" href="sqlite3_cli.html"><span class="std std-doc">SQLite CLI の使い方</span></a> の手順を PHP で行う.</p>
+<p>SQLite3 は, CLI だけでなく他のプログラミング言語のライブラリやバインディングを利用して操作することができる. ここでは, <a class="reference internal" href="sqlite3_cli.html"><span class="std std-doc">SQLite CLI の基本操作</span></a> の手順を PHP で行う.</p>
 <section id="id1">
 <h2>PHP による SQLite3 の操作例<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>まず, PHP コードの例を以下に示す.</p>
@@ -478,9 +476,8 @@ sqlite&gt;<span class="w"> </span>.open<span class="w"> </span>mydatabase.db
 </div>
 <p>の部分に対応する.</p>
 </section>
-</section>
 <section id="id7">
-<h2>5. データベースへの接続終了<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h3>5. データベースへの接続終了<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>最後に, データベースへの接続を切断する.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sqlite-&gt;close();</span>
 </pre></div>
@@ -490,6 +487,7 @@ sqlite&gt;<span class="w"> </span>.open<span class="w"> </span>mydatabase.db
 </pre></div>
 </div>
 <p>の部分に対応する.</p>
+</section>
 <section id="id8">
 <h3>補足<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>この例では, try-catch ブロックで例外処理を行っている.</p>
@@ -564,9 +562,7 @@ sqlite&gt;<span class="w"> </span>.open<span class="w"> </span>mydatabase.db
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. エラー処理</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. テーブルの作成</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4. データの挿入</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5. データベースへの接続終了</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5. データベースへの接続終了</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">補足</a></li>
 </ul>
 </li>
