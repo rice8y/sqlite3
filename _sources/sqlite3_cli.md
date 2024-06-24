@@ -1,4 +1,4 @@
-# SQLite3 CLI の使い方
+# SQLite3 CLI の基本操作
 
 ## 準備
 
