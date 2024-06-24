@@ -58,7 +58,7 @@ Enter ".help" for usage hints.
 sqlite> CREATE TABLE usertable (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT);
 ```
 
-ここでは, `usertable` という名のテーブルを作成し, `id` , `username` , `password` という3つのフィールドを持つようにしている.
+ここでは, `usertable` という名のテーブルを作成し, `id` , `username` , `password` という3つのカラムを持つようにしている.
 
 ## データの挿入
 
