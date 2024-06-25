@@ -221,6 +221,8 @@ SELECT * FROM users WHERE name GLOB 'A*';
 |`GLOB 'A*'`|Aで始まる任意の長さの文字列|
 |`GLOB '*A'`|Aで終わる任意の長さの文字列|
 |`GLOB '*A*'`|任意の位置にAを含む任意の長さの文字列|
+|`GLOB '?A*'`|Aが2文字目である任意の長さの文字列|
+|`GLOB 'A?'`|Aで始まり2文字目が任意の1文字の文字列|
 
 ### 特殊文字のエスケープ `ESCAPE`
 
@@ -232,4 +234,10 @@ SELECT * FROM users WHERE name LIKE 'A\%%' ESCAPE '\';
 
 ```sql
 SELECT * FROM users WHERE name REGEXP '^[A-Z]+$';
+```
+
+### 存在する `EXIST`
+
+```sql
+SELECT column1 FROM table1 WHERE EXISTS (SELECT * FROM table2);
 ```
