@@ -9,13 +9,8 @@
 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
 ```
 
-次に, 公開ディレクトリに移動する. ここでは, SQLite3 のテスト用ディレクトリ `test` を作成し, その配下で以降の操作を行う.
-
-```bash
-~$ cd public_html/pblone
-~/public_html/pblone$ mkdir sqltest
-~/public_html/pblone$ cd sqltest
-~/public_html/pblone/sqltest$
+```{note}
+Web ブラウザ上で実装する際には, 公開ディレクトリ配下で作業すること.
 ```
 
 ## CLI の起動

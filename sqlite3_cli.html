@@ -199,7 +199,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_finalize.html">SQLite3Result::finalize</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sql_intro.html">SQL 構文</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sql_intro.html">SQLite3 構文</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax01.html">テーブル操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax02.html">データ操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax03.html">インデックス操作</a></li>
@@ -429,12 +429,9 @@ document.write(`
 <span class="m">3</span>.37.2<span class="w"> </span><span class="m">2022</span>-01-06<span class="w"> </span><span class="m">13</span>:25:41<span class="w"> </span>872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
 </pre></div>
 </div>
-<p>次に, 公開ディレクトリに移動する. ここでは, SQLite3 のテスト用ディレクトリ <code class="docutils literal notranslate"><span class="pre">test</span></code> を作成し, その配下で以降の操作を行う.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>public_html/pblone
-~/public_html/pblone$<span class="w"> </span>mkdir<span class="w"> </span>sqltest
-~/public_html/pblone$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>sqltest
-~/public_html/pblone/sqltest$
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Web ブラウザ上で実装する際には, 公開ディレクトリ配下で作業すること.</p>
 </div>
 </section>
 <section id="cli">

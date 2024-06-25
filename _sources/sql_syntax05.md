@@ -66,7 +66,7 @@ SELECT 1 < 2 AS result;  -- TRUE
 SELECT * FROM users WHERE age < 30;
 ```
 
-## 以上 `>=`
+### 以上 `>=`
 
 ```sql
 SELECT 1 >= 2 AS result;  -- FALSE
@@ -236,7 +236,7 @@ SELECT * FROM users WHERE name LIKE 'A\%%' ESCAPE '\';
 SELECT * FROM users WHERE name REGEXP '^[A-Z]+$';
 ```
 
-### 存在する `EXIST`
+### 存在する `EXISTS`
 
 ```sql
 SELECT column1 FROM table1 WHERE EXISTS (SELECT * FROM table2);

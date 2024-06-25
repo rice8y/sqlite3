@@ -200,7 +200,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_finalize.html">SQLite3Result::finalize</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql_intro.html">SQL 構文</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql_intro.html">SQLite3 構文</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax01.html">テーブル操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax02.html">データ操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax03.html">インデックス操作</a></li>
@@ -416,9 +416,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">等しくない <code class="docutils literal notranslate"><span class="pre">!=</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">より大きい <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">より小さい <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">以下 <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></a></li>
 </ul>
 </li>
@@ -446,7 +444,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-glob-glob">パターンに一致する (UNIX の glob パターン) <code class="docutils literal notranslate"><span class="pre">GLOB</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape">特殊文字のエスケープ <code class="docutils literal notranslate"><span class="pre">ESCAPE</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regexp">正規表現に一致する <code class="docutils literal notranslate"><span class="pre">REGEXP</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exist">存在する <code class="docutils literal notranslate"><span class="pre">EXIST</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists">存在する <code class="docutils literal notranslate"><span class="pre">EXISTS</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -529,13 +527,13 @@ document.write(`
 </pre></div>
 </div>
 </section>
-</section>
 <section id="id13">
-<h2>以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code><a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<h3>以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">result</span><span class="p">;</span><span class="w">  </span><span class="c1">-- FALSE</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
 </pre></div>
 </div>
+</section>
 <section id="id14">
 <h3>以下 <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code><a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">result</span><span class="p">;</span><span class="w">  </span><span class="c1">-- TRUE</span>
@@ -752,8 +750,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="exist">
-<h3>存在する <code class="docutils literal notranslate"><span class="pre">EXIST</span></code><a class="headerlink" href="#exist" title="Link to this heading">#</a></h3>
+<section id="exists">
+<h3>存在する <code class="docutils literal notranslate"><span class="pre">EXISTS</span></code><a class="headerlink" href="#exists" title="Link to this heading">#</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -829,9 +827,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">等しくない <code class="docutils literal notranslate"><span class="pre">!=</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">より大きい <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">より小さい <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">以上 <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">以下 <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></a></li>
 </ul>
 </li>
@@ -859,7 +855,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-glob-glob">パターンに一致する (UNIX の glob パターン) <code class="docutils literal notranslate"><span class="pre">GLOB</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape">特殊文字のエスケープ <code class="docutils literal notranslate"><span class="pre">ESCAPE</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regexp">正規表現に一致する <code class="docutils literal notranslate"><span class="pre">REGEXP</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exist">存在する <code class="docutils literal notranslate"><span class="pre">EXIST</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists">存在する <code class="docutils literal notranslate"><span class="pre">EXISTS</span></code></a></li>
 </ul>
 </li>
 </ul>
