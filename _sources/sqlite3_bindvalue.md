@@ -23,7 +23,7 @@ public SQLite3Stmt::bindValue(string|int $param, mixed $value, int $type = SQLIT
 |SQLITE3_INTEGER|符号付き整数|
 |SQLITE3_FLOAT|浮動小数点数|
 |SQLITE3_TEXT|文字列|
-|SQLITE3_BLOB|bool 値|
+|SQLITE3_BLOB|バイナリデータ|
 |SQLITE3_NULL|NULL 値|
 
 なお, `type` のデフォルトは `SQLITE3_TEXT` . また, PHP 7.0.7 以降では `type` を省略すると, `value` の型から自動的に割り振られる. 具体的な割り振りは以下の通り.
