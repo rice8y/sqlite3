@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQLite3Stmt::execute &#8212; Introduction to SQLite3</title>
+    <title>SQLite3 の基礎 &#8212; Introduction to SQLite3</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sqlite3_excute';</script>
-    <link rel="canonical" href="https://rice8y.github.io/sqlite3/sqlite3_excute.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sql_base';</script>
+    <link rel="canonical" href="https://rice8y.github.io/sqlite3/sql_base.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SQLite3Result クラス" href="sqlite3_result_intro.html" />
-    <link rel="prev" title="SQLite3Stmt::bindValue" href="sqlite3_bindvalue.html" />
+    <link rel="next" title="SQLite3 クラス" href="sqlite3_normal_intro.html" />
+    <link rel="prev" title="PHP による SQLite3 の基本操作" href="sqlite3_php.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="unknown"/>
   </head>
@@ -181,7 +181,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_cli.html">SQLite CLI の基本操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_php.html">PHP による SQLite3 の基本操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql_base.html">SQLite3 の基礎</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQLite3 の基礎</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_construct.html">SQLite3::__construct</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_exec.html">SQLite3::exec</a></li>
@@ -190,10 +190,10 @@
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_close.html">SQLite3::close</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="sqlite3_stmt_intro.html">SQLite3Stmt クラス</a><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_stmt_intro.html">SQLite3Stmt クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_bindvalue.html">SQLite3Stmt::bindValue</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">SQLite3Stmt::execute</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_excute.html">SQLite3Stmt::execute</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_result_intro.html">SQLite3Result クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_fetcharray.html">SQLite3Result::fetchArray</a></li>
@@ -280,7 +280,7 @@
       
       
       
-      <li><a href="https://github.com/rice8y/sqlite3/edit/main/docs/sqlite3_excute.md" target="_blank"
+      <li><a href="https://github.com/rice8y/sqlite3/edit/main/docs/sql_base.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="_sources/sqlite3_excute.md" target="_blank"
+      <li><a href="_sources/sql_base.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQLite3Stmt::execute</h1>
+    <h1>SQLite3 の基礎</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,8 +404,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">データ型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">フィールド制約</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">例</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,46 +420,109 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sqlite3stmt-execute">
-<h1>SQLite3Stmt::execute<a class="headerlink" href="#sqlite3stmt-execute" title="Link to this heading">#</a></h1>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public SQLite3Stmt::execute(): SQLite3Result|false</span>
-</pre></div>
-</div>
-<p>プリペアドステートメントを実行し、結果セットオブジェクトを返す.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>同じステートメントオブジェクトに対して, <code class="docutils literal notranslate"><span class="pre">excute</span></code> すると, 得られる結果セットは独立していないため, そのような場合に, 再び <code class="docutils literal notranslate"><span class="pre">excute</span></code> する際には, <code class="docutils literal notranslate"><span class="pre">excute</span></code> する前に <code class="docutils literal notranslate"><span class="pre">finalize</span></code> することが推奨される.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="sqlite3">
+<h1>SQLite3 の基礎<a class="headerlink" href="#sqlite3" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>例<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sqlite = new SQLite3(&#39;mydatabase.db&#39;);</span>
-
-<span class="x">$sqlite-&gt;exec(&#39;CREATE TABLE usertable (id INTEGER, password TEXT)&#39;);</span>
-<span class="x">$sqlite-&gt;exec(&quot;INSERT INTO usertable (id, password) VALUES (1, &#39;abc&#39;)&quot;);</span>
-
-<span class="x">$stmt = $sqlite-&gt;prepare(&#39;SELECT password FROM usertable WHERE id=:id&#39;);</span>
-<span class="x">$stmt-&gt;bindValue(&#39;:id&#39;, 1, SQLITE3_INTEGER);</span>
-
-<span class="x">$result = $stmt-&gt;execute();</span>
-<span class="x">var_dump($result-&gt;fetchArray());</span>
-</pre></div>
+<h2>データ型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>SQLite は他のデータベースエンジンとの互換性を高めるため, 型アフィニティという方法を採用している. ここで, 型アフィニティとは, データベースのカラムにデータを追加する際に, データ型を推測して処理するための方法である. SQLite では, カラムに厳密なデータ型を持たせず, 型アフィニティを持たせることで, データ型を柔軟に扱えるようにしている.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>主なデータ型 (ストレージクラス)</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INTEGER</p></td>
+<td><p>符号付き整数値 (8バイトまで格納可能)</p></td>
+</tr>
+<tr class="row-odd"><td><p>REAL</p></td>
+<td><p>8バイトの浮動小数点数</p></td>
+</tr>
+<tr class="row-even"><td><p>TEXT</p></td>
+<td><p>文字列 (UTF-8, UTF-16BE, または UTF-16LE エンコーディングのデータ)</p></td>
+</tr>
+<tr class="row-odd"><td><p>BLOB</p></td>
+<td><p>バイナリデータ</p></td>
+</tr>
+<tr class="row-even"><td><p>NULL</p></td>
+<td><p>NULL 値</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<p><strong>出力：</strong></p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">array(2) {</span>
-<span class="x">  [0]=&gt;</span>
-<span class="x">  string(3) &quot;abc&quot;</span>
-<span class="x">  [&quot;password&quot;]=&gt;</span>
-<span class="x">  string(3) &quot;abc&quot;</span>
-<span class="x">}</span>
-</pre></div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>型アフィニティ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INT, INTEGER, TINYINT, SMALLINT, MEDIUMINT, BIGINT, UNSIGNED BIG INT, INT2, INT8</p></td>
+<td><p>INTEGER</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHARACTER(20), VARCHAR(255), VARYING CHARACTER(255), NCHAR(55), NATIVE CHARACTER(70), NVARCHAR(100), TEXT, CLOB</p></td>
+<td><p>TEXT</p></td>
+</tr>
+<tr class="row-even"><td><p>BLOB, <em>no datatype specified</em></p></td>
+<td><p>BLOB</p></td>
+</tr>
+<tr class="row-odd"><td><p>REAL, DOUBLE, DOUBLE PRECISION, FLOAT</p></td>
+<td><p>REAL</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMERIC, DECIMAL(10,5), BOOLEAN, DATE, DATETIME</p></td>
+<td><p>NUMERIC</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<p>この例は  <a class="reference internal" href="sqlite3_prepare.html"><span class="std std-doc">SQLite3::prepare</span></a> と同様であるため, 説明は省略する.</p>
 </section>
 <section id="id2">
-<h2>参考文献<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>PHP, &quot;SQLite3Stmt::execute&quot;, <a class="reference external" href="https://www.php.net/manual/ja/sqlite3stmt.execute.php">https://www.php.net/manual/ja/sqlite3stmt.execute.php</a>, (2024-06-25 参照).</p></li>
-</ul>
+<h2>フィールド制約<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>フィールド制約を以下に示す.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>フィールド制約</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PRIMARY KEY</p></td>
+<td><p>一意の識別子を持つフィールドを定義 (テーブルに1つまで)</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUTOINCREMENT</p></td>
+<td><p>自動インクリメント</p></td>
+</tr>
+<tr class="row-even"><td><p>UNIQUE</p></td>
+<td><p>一意性を保証 (重複防止)</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOT NULL</p></td>
+<td><p>NULL 値を禁止</p></td>
+</tr>
+<tr class="row-even"><td><p>CHECK</p></td>
+<td><p>特定の条件を満たすことを保証</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT</p></td>
+<td><p>NULL の場合にセット</p></td>
+</tr>
+<tr class="row-even"><td><p>FOREIGN KEY</p></td>
+<td><p>外部キー制約</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>なお, <code class="docutils literal notranslate"><span class="pre">FOREIGN</span> <span class="pre">KEY</span></code> 制約を付加する際には, <code class="docutils literal notranslate"><span class="pre">PRAGMA</span> <span class="pre">foreign_keys</span> <span class="pre">=</span> <span class="pre">ON;</span></code> を実行して有効化する必要がある. 実際には, 有効化しなくても制約を付加できるが, エラーが発生しないため有効化することを推奨する.</p>
+<section id="id3">
+<h3>例<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">table_name1</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hoge&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fuga&#39;</span><span class="p">)),</span>
+<span class="w">  </span><span class="n">param1</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">  </span><span class="n">param2</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">table_name2</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>なお, <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code> は <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> の後に置かなければならない. また, 複数のカラムに <code class="docutils literal notranslate"><span class="pre">UNIQUE</span></code> 制約を付加したい場合は, <code class="docutils literal notranslate"><span class="pre">CREATE</span></code> 文 の最後に <code class="docutils literal notranslate"><span class="pre">UNIQUE</span> <span class="pre">({column1,</span> <span class="pre">column2,</span> <span class="pre">...})</span></code> をつける.</p>
+</section>
 </section>
 </section>
 
@@ -491,20 +557,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sqlite3_bindvalue.html"
+       href="sqlite3_php.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SQLite3Stmt::bindValue</p>
+        <p class="prev-next-title">PHP による SQLite3 の基本操作</p>
       </div>
     </a>
     <a class="right-next"
-       href="sqlite3_result_intro.html"
+       href="sqlite3_normal_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SQLite3Result クラス</p>
+        <p class="prev-next-title">SQLite3 クラス</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -524,8 +590,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">データ型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">フィールド制約</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">例</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
