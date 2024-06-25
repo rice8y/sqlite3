@@ -1,4 +1,4 @@
-# SQL 構文
+# SQLite3 構文
 
 ```{tableofcontents}
 
