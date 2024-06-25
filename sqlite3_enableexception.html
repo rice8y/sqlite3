@@ -61,6 +61,8 @@
     <link rel="canonical" href="https://rice8y.github.io/sqlite3/sqlite3_enableexception.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SQLite3::prepare" href="sqlite3_prepare.html" />
+    <link rel="prev" title="SQLite3::exec" href="sqlite3_exec.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="unknown"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -174,16 +174,37 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    SQLite3 入門
+                    SQLite3 for PHP
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_cli.html">SQLite CLI の基本操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_php.html">PHP による SQLite3 の基本操作</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_stmt_intro.html">SQLite3Stmt クラスの概要</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sqlite3_binvalue.html">SQLite3Stmt::bindValue</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_construct.html">SQLite3::__construct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_exec.html">SQLite3::exec</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SQLite3::enableExceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_prepare.html">SQLite3::prepare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_close.html">SQLite3::close</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_stmt_intro.html">SQLite3Stmt クラス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_bindvalue.html">SQLite3Stmt::bindValue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_excute.html">SQLite3Stmt::execute</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_result_intro.html">SQLite3Result クラス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_fetcharray.html">SQLite3Result::fetchArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_finalize.html">SQLite3Result::finalize</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sql_intro.html">SQL 構文</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sql_syntax01.html">テーブル操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_syntax02.html">データ操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_syntax03.html">インデックス操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_syntax04.html">トランザクション操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_syntax05.html">演算子</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
@@ -464,6 +485,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="sqlite3_exec.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SQLite3::exec</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sqlite3_prepare.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SQLite3::prepare</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

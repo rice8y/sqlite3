@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQLite3::exec &#8212; Introduction to SQLite3</title>
+    <title>テーブル操作 &#8212; Introduction to SQLite3</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sqlite3_exec';</script>
-    <link rel="canonical" href="https://rice8y.github.io/sqlite3/sqlite3_exec.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sql_syntax01';</script>
+    <link rel="canonical" href="https://rice8y.github.io/sqlite3/sql_syntax01.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SQLite3::enableExceptions" href="sqlite3_enableexception.html" />
-    <link rel="prev" title="SQLite3::__construct" href="sqlite3_construct.html" />
+    <link rel="next" title="データ操作" href="sql_syntax02.html" />
+    <link rel="prev" title="SQL 構文" href="sql_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="unknown"/>
   </head>
@@ -181,13 +181,13 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_cli.html">SQLite CLI の基本操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite3_php.html">PHP による SQLite3 の基本操作</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラス</a><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_normal_intro.html">SQLite3 クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_construct.html">SQLite3::__construct</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">SQLite3::exec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3_exec.html">SQLite3::exec</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_enableexception.html">SQLite3::enableExceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_prepare.html">SQLite3::prepare</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_close.html">SQLite3::close</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="sqlite3_stmt_intro.html">SQLite3Stmt クラス</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_bindvalue.html">SQLite3Stmt::bindValue</a></li>
@@ -199,13 +199,13 @@
 <li class="toctree-l2"><a class="reference internal" href="sqlite3_finalize.html">SQLite3Result::finalize</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sql_intro.html">SQL 構文</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sql_syntax01.html">テーブル操作</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql_intro.html">SQL 構文</a><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">テーブル操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax02.html">データ操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax03.html">インデックス操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax04.html">トランザクション操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_syntax05.html">演算子</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/rice8y/sqlite3/edit/main/docs/sqlite3_exec.md" target="_blank"
+      <li><a href="https://github.com/rice8y/sqlite3/edit/main/docs/sql_syntax01.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="_sources/sqlite3_exec.md" target="_blank"
+      <li><a href="_sources/sql_syntax01.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQLite3::exec</h1>
+    <h1>テーブル操作</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,9 +402,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query">query</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">テーブルの作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">テーブルの削除</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">テーブルの変更</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">カラムの追加</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">テーブル名の変更</a></li>
 </ul>
             </nav>
         </div>
@@ -416,31 +420,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sqlite3-exec">
-<h1>SQLite3::exec<a class="headerlink" href="#sqlite3-exec" title="Link to this heading">#</a></h1>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public SQLite3::exec(string $query): bool</span>
-</pre></div>
-</div>
-<p>指定したデータベースに, 結果を返さないクエリを実行する.</p>
-<section id="query">
-<h2>query<a class="headerlink" href="#query" title="Link to this heading">#</a></h2>
-<p>実行したい SQL クエリ.</p>
-</section>
-<section id="id1">
-<h2>例<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nv">$sqlite</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SQLite3</span><span class="p">(</span><span class="s1">&#39;mydatabase.db&#39;</span><span class="p">);</span>
-
-<span class="nv">$sqlite</span><span class="o">-&gt;</span><span class="na">exec</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE mytable (word TEXT)&#39;</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-</div>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>テーブル操作<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>参考文献<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>PHP, &quot;SQLite3::exec&quot;, <a class="reference external" href="https://www.php.net/manual/ja/sqlite3.exec.php">https://www.php.net/manual/ja/sqlite3.exec.php</a>, (2024-06-25 参照).</p></li>
-</ul>
+<h2>テーブルの作成<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">colmun1</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="n">colmun2</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>テーブルの削除<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>テーブルの変更<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>カラムの追加<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">new_column_name</span><span class="w"> </span><span class="n">datatype</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>テーブル名の変更<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">old_table_name</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">new_table_name</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -475,20 +482,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sqlite3_construct.html"
+       href="sql_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SQLite3::__construct</p>
+        <p class="prev-next-title">SQL 構文</p>
       </div>
     </a>
     <a class="right-next"
-       href="sqlite3_enableexception.html"
+       href="sql_syntax02.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SQLite3::enableExceptions</p>
+        <p class="prev-next-title">データ操作</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,9 +515,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query">query</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">テーブルの作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">テーブルの削除</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">テーブルの変更</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">カラムの追加</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">テーブル名の変更</a></li>
 </ul>
   </nav></div>
 
