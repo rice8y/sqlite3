@@ -48,3 +48,8 @@ CREATE TABLE table_name1 (
 ```
 
 なお, `AUTOINCREMENT` は `PRIMARY KEY` の後に置かなければならない. また, 複数のカラムに `UNIQUE` 制約を付加したい場合は, `CREATE` 文 の最後に `UNIQUE ({column1, column2, ...})` をつける.
+
+## 参考文献
+
+- SQLite, "Datatypes In SQLite", [https://sqlite.org/datatype3.html](https://sqlite.org/datatype3.html), (2024-06-25 参照).
+  
